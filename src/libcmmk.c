@@ -192,7 +192,8 @@ int cmmk_find_device(int *product)
 	static int supported_devices[] = {
 		CMMK_USB_MASTERKEYS_PRO_L,
 		CMMK_USB_MASTERKEYS_PRO_S,
-		CMMK_USB_MASTERKEYS_MK750
+		CMMK_USB_MASTERKEYS_MK750,
+		CMMK_USB_MASTERKEYS_CK550,
 	};
 
 	libusb_context *context = NULL;
@@ -264,6 +265,7 @@ static int cmmk_try_determine_layout(struct cmmk *state, int product)
 		case CMMK_USB_MASTERKEYS_PRO_L: device_model = CMMK_PRODUCT_MASTERKEYS_PRO_L; break;
 		case CMMK_USB_MASTERKEYS_PRO_S: device_model = CMMK_PRODUCT_MASTERKEYS_PRO_S; break;
 		case CMMK_USB_MASTERKEYS_MK750: device_model = CMMK_PRODUCT_MASTERKEYS_MK750; break;
+		case CMMK_USB_MASTERKEYS_CK550: device_model = CMMK_PRODUCT_MASTERKEYS_PRO_L; break;
 	}
 
 	if (general_layout == CMMK_LAYOUT_TYPE_ANSI) {
